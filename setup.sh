@@ -19,7 +19,7 @@ fi
 if command -v apt-get &> /dev/null; then
     echo -e "${GREEN}Detected apt-based system.${NC}"
     apt-get update
-    apt-get install -y aircrack-ng iw iproute2 python3 python3-pip python3-venv
+    apt-get install -y aircrack-ng iw iproute2 python3 python3-pip
 elif command -v pacman &> /dev/null; then
     echo -e "${GREEN}Detected pacman-based system.${NC}"
     pacman -Sy --noconfirm aircrack-ng iw iproute2 python python-pip
@@ -41,16 +41,11 @@ else
     exit 1
 fi
 
-# Set up python environment
-echo -e "${BLUE}Setting up Python virtual environment...${NC}"
-if python3 -m venv venv; then
-    source venv/bin/activate
-else
-    echo -e "${RED}Warning: Could not create virtual environment. Installing packages globally...${NC}"
-fi
+# Install Python packages globally
+echo -e "${BLUE}Installing Python dependencies globally...${NC}"
 
-pip install --upgrade pip
-pip install -r requirements.txt
+python3 -m pip install --break-system-packages --upgrade pip
+python3 -m pip install --break-system-packages -r requirements.txt
 
 echo -e "${GREEN}Setup complete!${NC}"
-echo -e "${BLUE}To run the tool: sudo venv/bin/python3 deauther.py${NC}"
+echo -e "${BLUE}To run the tool: sudo python3 deauther.py${NC}"

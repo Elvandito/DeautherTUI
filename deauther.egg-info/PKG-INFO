@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: deauther
+Version: 1.0.0
+Summary: WiFi Deauther TUI
+Author: Elvan
+Requires-Dist: textual
+Requires-Dist: rich
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,0 +1,9 @@
+README.md
+deauther.py
+setup.py
+deauther.egg-info/PKG-INFO
+deauther.egg-info/SOURCES.txt
+deauther.egg-info/dependency_links.txt
+deauther.egg-info/entry_points.txt
+deauther.egg-info/requires.txt
+deauther.egg-info/top_level.txt
