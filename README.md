@@ -17,6 +17,11 @@ A premium Terminal User Interface (TUI) for WiFi deauthentication attacks, built
 - Root privileges.
 - `aircrack-ng` suite installed.
 
+```bash
+git clone https://github.com/Elvandito/DeautherTUI.git
+cd DeautherTUI
+```
+
 ### Option 1: Quick Setup Script (Recommended)
 ```bash
 sudo ./setup.sh
