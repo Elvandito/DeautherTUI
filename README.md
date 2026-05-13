@@ -1,71 +1,93 @@
-# DeautherTUI
+# 📡 DeautherTUI
+> **Advanced WiFi Security Auditor & Deauthentication Suite**
 
-A premium Terminal User Interface (TUI) for WiFi deauthentication attacks, built using the `aircrack-ng` suite and Python's `Textual` framework.
+`DeautherTUI` is a premium, terminal-based security tool designed for wireless network auditing. Built with the powerful **Textual** framework and the **aircrack-ng** suite, it provides a sleek, modern interface for monitoring and testing WiFi vulnerabilities.
 
-## Features
-- **Dashboard UI**: Real-time monitoring of Access Points and Clients.
-- **Auto-Discovery**: Automatically find and list targets.
-- **Multi-Band Scanning**: Supports 2.4GHz, 5GHz, and all-band scanning.
-- **Easy Deployment**: Supports `apt`, `pacman`, `dnf`, `zypper`, `apk`, and Docker.
-- **Demo Mode**: Test the UI without hardware.
+---
 
-## Installation
+## ⚡ Key Features
 
-### Prerequisites
-- A Linux distribution (Kali, Ubuntu, Arch, etc.)
-- A WiFi card that supports **Monitor Mode** and **Packet Injection**.
-- Root privileges.
-- `aircrack-ng` suite installed.
+| Feature | Description |
+| :--- | :--- |
+| 🖥️ **Premium UI** | A high-performance, responsive TUI with real-time updates. |
+| 🔍 **Deep Scan** | Automated discovery of Access Points and connected Clients. |
+| 📡 **Multi-Band** | Full support for **2.4GHz** and **5GHz**(where hardware allows). |
+| 🛠️ **Auto-Config** | Handles monitor mode switching and process cleanup automatically. |
+| 🐳 **Containerized** | Ready-to-use Docker environment for consistent execution. |
+| 🧪 **Demo Mode** | Simulation mode for UI testing without wireless hardware. |
 
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+* **Operating System**: Linux (Kali, Arch, Debian, etc.)
+* **Hardware**: WiFi adapter supporting **Monitor Mode** & **Packet Injection**.
+* **Permissions**: Root/Sudo access is required for raw socket manipulation.
+
+### 📥 Installation
+
+Choose your preferred installation method:
+
+#### 🔹 Method 1: System Install (Recommended)
+This installs `deauther` as a global command.
 ```bash
 git clone https://github.com/Elvandito/DeautherTUI.git
 cd DeautherTUI
+sudo /usr/bin/python3 setup.py install
 ```
 
-### Option 1: Quick Setup Script (Recommended)
+#### 🔹 Method 2: Quick Setup
 ```bash
 sudo ./setup.sh
 ```
 
-### Option 2: Install as System Command (`sudo deauther`)
-```bash
-sudo /usr/bin/python3 setup.py install
-```
-
-> **Note:** If you see `sudo: /path/to/venv/python3: command not found` after installing,
-> it means a stale script with a venv shebang exists at `/usr/local/bin/deauther`.
-> Fix it by running:
-> ```bash
-> sudo bash -c 'echo -e "#!/usr/bin/python3\nimport sys\nsys.path.insert(0, \"/usr/lib/python3.14/site-packages\")\nfrom deauther import main\nmain()" > /usr/local/bin/deauther && chmod +x /usr/local/bin/deauther'
-> ```
-
-### Option 3: Docker
+#### 🔹 Method 3: Docker
 ```bash
 ./deauther-docker.sh
 ```
 
-## Usage
-Launch the tool:
+---
+
+## 🎮 How to Use
+
+Simply run the command from anywhere in your terminal:
 ```bash
 sudo deauther
-# or
-sudo python3 deauther.py
 ```
 
-### Keybindings
+### ⌨️ Keybindings
 | Key | Action |
-|-----|--------|
-| `S` | Start/Stop scanning |
-| `D` | Deauth selected target |
-| `R` | Refresh interfaces |
-| `Q` | Quit |
-| `Enter` / Click | Select a target |
+| :---: | :--- |
+| `S` | Toggle Scanning (Start/Stop) |
+| `D` | Launch Deauthentication Attack |
+| `R` | Refresh Network Interfaces |
+| `Q` | Exit Application |
+| `Enter` | Select Target from Table |
 
-## Demo Mode
-Test the UI without a WiFi card:
+---
+
+## 🛠️ Troubleshooting
+
+> [!IMPORTANT]
+> **Stale Venv Issue**: If you see `sudo: command not found` referencing a `venv` path, run the following fix:
+> ```bash
+> sudo bash -c 'echo -e "#!/usr/bin/python3\nimport sys\nsys.path.insert(0, \"/usr/lib/python3.14/site-packages\")\nfrom deauther import main\nmain()" > /usr/local/bin/deauther && chmod +x /usr/local/bin/deauther'
+> ```
+
+---
+
+## 🧪 Demo Mode
+Want to see the UI in action without hardware? Use the demo flag:
 ```bash
-DEAUTH_DEMO=1 python3 deauther.py
+DEAUTH_DEMO=1 deauther
 ```
 
-## Disclaimer
-This tool is for **educational purposes and authorized security testing only**. Unauthorized use on networks you do not own is illegal. Use responsibly.
+---
+
+## ⚖️ Disclaimer
+**For Educational Purposes Only.**
+Unauthorized access or disruption of wireless networks is illegal. This tool is designed for security professionals and researchers to test their own infrastructure. Use responsibly and legally.
+
+---
+<p align="center">Made with ❤️ by <b>Elvandito</b></p>
